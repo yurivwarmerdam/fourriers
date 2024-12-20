@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://ju7laqvqd2d1"]
+
+[ext_resource type="PackedScene" path="res://circle.tscn" id="1"]
+[ext_resource type="Script" path="res://drawer.gd" id="2"]
+[ext_resource type="PackedScene" path="res://ui.tscn" id="3"]
+
+[node name="main" type="Node"]
+
+[node name="origin" type="Node2D" parent="."]
+position = Vector2(524, 249)
+
+[node name="circle" parent="origin" instance=ExtResource("1")]
+length = 0
+initial_rotation = 1.5
+
+[node name="circle" parent="origin/circle" instance=ExtResource("1")]
+
+[node name="circle2" parent="origin/circle/circle" instance=ExtResource("1")]
+length = 40
+initial_rotation = 3.0
+
+[node name="circle3" parent="origin/circle/circle/circle2" instance=ExtResource("1")]
+length = 30
+initial_rotation = 2.0
+
+[node name="circle4" parent="origin/circle/circle/circle2/circle3" instance=ExtResource("1")]
+length = 20
+initial_rotation = 1.5
+
+[node name="circle5" parent="origin/circle/circle/circle2/circle3/circle4" instance=ExtResource("1")]
+length = 10
+
+[node name="drawer" type="Node2D" parent="."]
+script = ExtResource("2")
+
+[node name="ui" parent="." instance=ExtResource("3")]
+layout_mode = 3
+anchors_preset = 12

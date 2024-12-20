@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dibbxaaw2nu0u"]
+
+[ext_resource type="Script" path="res://end_effector.gd" id="1_setft"]
+[ext_resource type="Texture2D" uid="uid://dbaiid7ehfolc" path="res://icon.png" id="2_6p7ps"]
+
+[node name="end_effector" type="Node2D"]
+script = ExtResource("1_setft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.164706, 0.14902, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_6p7ps")

@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0q2w0vj2tmjj"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_utm6o"]
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_utm6o")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="start" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+text = "Start"
+
+[node name="stop" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+text = "Stop
+"
+
+[node name="reset" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+text = "reset"
+
+[node name="labels" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="_" type="Label" parent="HBoxContainer/labels"]
+layout_mode = 2
+
+[node name="rotation" type="Label" parent="HBoxContainer/labels"]
+layout_mode = 2
+text = "rotation"
+
+[node name="length" type="Label" parent="HBoxContainer/labels"]
+layout_mode = 2
+text = "length"
+
+[node name="tuners" type="HBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="labels2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="_" type="Label" parent="HBoxContainer/labels2"]
+layout_mode = 2
+
+[node name="rotation" type="Label" parent="HBoxContainer/labels2"]
+layout_mode = 2
+text = "phase"
+
+[node name="length" type="Label" parent="HBoxContainer/labels2"]
+layout_mode = 2
+text = "magnitude"
+
+[connection signal="button_down" from="HBoxContainer/start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="HBoxContainer/stop" to="." method="_on_stop_button_down"]
+[connection signal="button_down" from="HBoxContainer/reset" to="." method="_on_reset_button_down"]
