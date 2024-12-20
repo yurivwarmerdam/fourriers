@@ -2,7 +2,4 @@ res://default_env.tres
 res://main.tscn
 res://ui.tscn
 res://vector_tuner.tscn
-res://circle.tscn
 res://end_effector.tscn
-res://drawer.gd
-res://TODO.md
