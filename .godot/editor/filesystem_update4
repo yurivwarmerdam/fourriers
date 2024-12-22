@@ -3,3 +3,15 @@ res://main.tscn
 res://ui.tscn
 res://vector_tuner.tscn
 res://end_effector.tscn
+res://circle_origin.gd
+res://ui.gd
+res://whiteboard.gd
+res://circle_check.tscn
+res://circle_check.gd
+res://Check/circle_check.tscn
+res://check/circle_check.tscn
+res://check/circle_origin_check.tscn
+res://check/checker.tscn
+res://check/circle_check.gd
+res://check/end_effector_check.tscn
+res://check/checker.gd

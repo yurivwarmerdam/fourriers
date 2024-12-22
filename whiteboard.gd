@@ -5,11 +5,13 @@ extends Node
 @export var drawer:Node2D
 @export var end_effector:Node2D
 
+@export var circles_check:Array[Circle_Check]=[]
+@export var end_effector_check:Node2D
+
 @export var play:bool=false: set = set_play
 signal play_changed
 
 func _ready():
-	print("white")
 	set_play(false)
 
 func set_play(value:bool)->void:

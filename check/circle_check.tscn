@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://csy1iw278y13r"]
+
+[ext_resource type="Script" path="res://check/circle_check.gd" id="1_kmi6x"]
+[ext_resource type="Texture2D" uid="uid://dbaiid7ehfolc" path="res://icon.png" id="2_f8pgp"]
+
+[node name="circle_check" type="Node2D"]
+script = ExtResource("1_kmi6x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_f8pgp")

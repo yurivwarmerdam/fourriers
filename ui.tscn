@@ -52,7 +52,11 @@ text = "rotation"
 layout_mode = 2
 text = "length"
 
-[node name="tuners" type="HBoxContainer" parent="HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+
+[node name="tuners" type="HBoxContainer" parent="HBoxContainer/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 

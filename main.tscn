@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ju7laqvqd2d1"]
+[gd_scene load_steps=5 format=3 uid="uid://ju7laqvqd2d1"]
 
-[ext_resource type="PackedScene" uid="uid://0t3053ge01gq" path="res://circle.tscn" id="1"]
 [ext_resource type="Script" path="res://circle_origin.gd" id="1_iqoqc"]
 [ext_resource type="Script" path="res://drawer.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://c0q2w0vj2tmjj" path="res://ui.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://dibbxaaw2nu0u" path="res://end_effector.tscn" id="3_xubay"]
+[ext_resource type="PackedScene" uid="uid://b30ydana2objq" path="res://check/checker.tscn" id="4_v3gho"]
 
 [node name="main" type="Node"]
 
@@ -13,25 +12,11 @@ unique_name_in_owner = true
 position = Vector2(524, 249)
 rotation = -1.5708
 script = ExtResource("1_iqoqc")
-
-[node name="circle" parent="circle_origin" instance=ExtResource("1")]
-length = 50
-
-[node name="circle1" parent="circle_origin/circle" instance=ExtResource("1")]
-
-[node name="circle2" parent="circle_origin/circle/circle1" instance=ExtResource("1")]
-rotation = -6.28319
-
-[node name="circle3" parent="circle_origin/circle/circle1/circle2" instance=ExtResource("1")]
-rotation = -0.329867
-
-[node name="circle4" parent="circle_origin/circle/circle1/circle2/circle3" instance=ExtResource("1")]
-
-[node name="circle5" parent="circle_origin/circle/circle1/circle2/circle3/circle4" instance=ExtResource("1")]
-
-[node name="end_effector" parent="circle_origin/circle/circle1/circle2/circle3/circle4/circle5" instance=ExtResource("3_xubay")]
+num_circles = 11
 
 [node name="drawer" type="Node2D" parent="."]
 script = ExtResource("2")
 
 [node name="ui" parent="." instance=ExtResource("3")]
+
+[node name="Checker" parent="." instance=ExtResource("4_v3gho")]
