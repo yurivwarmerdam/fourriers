@@ -12,6 +12,14 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_utm6o")
 
+[node name="check" type="Button" parent="."]
+custom_minimum_size = Vector2(65, 30)
+layout_mode = 2
+offset_top = -115.0
+offset_right = 204.0
+offset_bottom = -84.0
+text = "Check"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
@@ -74,6 +82,7 @@ text = "phase"
 layout_mode = 2
 text = "magnitude"
 
+[connection signal="button_down" from="check" to="." method="_on_check_button_down"]
 [connection signal="button_down" from="HBoxContainer/start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="HBoxContainer/stop" to="." method="_on_stop_button_down"]
 [connection signal="button_down" from="HBoxContainer/reset" to="." method="_on_reset_button_down"]

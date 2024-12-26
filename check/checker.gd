@@ -1,20 +1,25 @@
 extends Node2D
+class_name Checker
 
+var checking:bool=false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Whiteboard.checker=self
 
+func _physics_process(delta: float) -> void:
+	if checking:
+		
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func check_solution():
-	pass
-
+func check():
+	# TODO: disable all inputs
+	checking=true
+	generate_solution()
+	check_solution()
 
 func generate_solution():
 	Whiteboard.reset()
+	Whiteboard.set_play(true)
+	Whiteboard.set_play_check(true)
+
+func check_solution():
 	pass

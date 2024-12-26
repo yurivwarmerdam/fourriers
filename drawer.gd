@@ -2,7 +2,6 @@ extends Node2D
 class_name drawer
 
 var nodes:Array
-
 var shape:PackedVector2Array
 
 func _ready():
@@ -18,11 +17,10 @@ func get_nodes():
 		result=result+children
 	return result
 
-
 func _physics_process(delta):
 	shape.append(nodes[-1].global_position)
 	if shape.size()>1000:
-		shape=shape.slice(900)
+		shape=shape.slice(1)
 
 func _process(_delta):
 	queue_redraw()
@@ -32,8 +30,15 @@ func _draw():
 	for i in nodes.size()-1:
 		draw_line(nodes[i].global_position,nodes[i+1].global_position,Color.DARK_BLUE)
 	#draw fourrier shape
-	for i in shape.size()-1:
-		draw_polyline(shape,Color.GREEN_YELLOW)
+	draw_polyline(shape,Color.GREEN_YELLOW)
+	# draw waveform representation
+	var remapped=[]
+	var origin=Whiteboard.circle_origin.position
+	
+	for i in shape.size():
+		remapped.append(Vector2(origin.x-(shape.size()-i), shape[i].y+origin.y))
+	draw_polyline(remapped,Color.ORANGE)
+
 
 func reset():
 	#nodes=get_nodes()

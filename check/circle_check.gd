@@ -10,6 +10,7 @@ var rotation_speed=.5
 @onready var parent=get_parent()
 
 func _ready():
+	Whiteboard.circles_check.append(self)
 	child.position=Vector2(length,0)
 	reset()
 	set_physics_process(false)

@@ -17,3 +17,6 @@ func _on_stop_button_down():
 
 func _on_reset_button_down():
 	Whiteboard.reset()
+
+func _on_check_button_down() -> void:
+	Whiteboard.check()
