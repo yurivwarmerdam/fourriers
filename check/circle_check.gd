@@ -5,8 +5,6 @@ class_name Circle_Check
 @onready  var child=get_child(-1)
 @export var length=0 : set=set_length
 
-var rotation_speed=.5
-
 @onready var parent=get_parent()
 
 func _ready():
@@ -16,7 +14,7 @@ func _ready():
 	set_physics_process(false)
 
 func _physics_process(delta):
-	rotation=rotation+(delta*rotation_speed*TAU)
+	rotation=rotation+(delta*Whiteboard.speed*TAU)
 	#position=position.rotated(rotation_speed*delta)
 
 func reset():

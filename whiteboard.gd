@@ -9,6 +9,8 @@ extends Node
 @export var circles_check:Array[Circle_Check]=[]
 @export var end_effector_check:Node2D
 
+@export var speed:float=.5
+
 @export var play:bool=false: set = set_play
 signal play_changed
 
